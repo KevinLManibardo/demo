@@ -1,0 +1,12 @@
+301,Fire
+302,Water
+303,Earth
+304,Air
+305,Light
+306,Darkness
+307,Electricity
+308,Ice
+309,Wood
+310,Metal
+311,Poison
+312,Eter

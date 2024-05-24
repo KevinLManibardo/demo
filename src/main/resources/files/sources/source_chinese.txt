@@ -1,0 +1,12 @@
+201,Rat
+202,Ox
+203,Tiger
+204,Rabbit
+205,Dragon
+206,Snake
+207,Horse
+208,Sheep
+209,Monkey
+210,Rooster
+211,Dog
+212,Pig
