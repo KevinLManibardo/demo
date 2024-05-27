@@ -25,8 +25,6 @@
 
 - Execute file "run.bat" (If you use Windows") or "run.sh" (If you use Linux)
 
-- OR double click on file "prueba-ariadna-1.0.0.jar"
-
   
   
 
@@ -56,6 +54,6 @@
 
 		 - localhost:8000/events/min/{minValue}/max/{maxValue}
 
-		 - e.g. [Values URL](localhost:8000/events/min/-345/max/973)
+		 - e.g. [Values URL](http://localhost:8000/events/min/-345/max/973)
 
 		 - The values of "minValue" and "maxValue" can range from -1000 to 1000 (integers only)
