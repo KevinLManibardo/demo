@@ -1,6 +1,7 @@
 package com.ariadna.infrastructure.datasources;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
@@ -78,7 +79,7 @@ public class EventsDatasource implements EventsRepository{
     }
 
 
-    private List<EventWithSourceModel> joinEventsAndSources(List<EventModel> events) {
+    private <T> List<EventWithSourceModel> joinEventsAndSources(List<EventModel> events) {
         List<EventWithSourceModel> eventsWithSource = new ArrayList<EventWithSourceModel>();
         List<SourceModel> sources = getSources();
         for(EventModel event : events) {
@@ -86,6 +87,7 @@ public class EventsDatasource implements EventsRepository{
             EventWithSourceModel eventWithSource = new EventWithSourceModel(event.getId(), event.getSourceId(), foundSource, event.getTimestamp(), event.getValue());
             eventsWithSource.add(eventWithSource);
         }
+        Collections.sort(eventsWithSource);
         return eventsWithSource;
     }
     

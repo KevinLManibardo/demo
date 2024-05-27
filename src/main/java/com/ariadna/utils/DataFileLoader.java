@@ -22,25 +22,31 @@ public class DataFileLoader {
         this.eventsRepository = eventsRepository;
     }
 
-    public void loadFiles(String type, String path) {
+    public void loadFiles(String type, String path, boolean asynchronous) {
         final File folder = new File(path);
-        loadFilesForFolder(folder, type);
+        loadFilesForFolder(folder, type, asynchronous);
     }
 
-    private void loadFilesForFolder(final File folder, String type) {
+    private void loadFilesForFolder(final File folder, String type, boolean asynchronous) {
         for (final File fileEntry : folder.listFiles()) {
             if (fileEntry.isFile()) {
-                new Thread() {
-                    public void run() {
-                        System.out.println("Loading " + fileEntry + "...");
-                        if(type == "event") loadEventFile(fileEntry);
-                        if(type == "source") loadSourceFile(fileEntry);
-                        System.out.println("Finished loading " + fileEntry + "!");
-                    };
-                }.start();
+                if(asynchronous) {
+                    new Thread() {
+                        public void run() {
+                            loadDataFiles(fileEntry, type);
+                        };
+                    }.start();
+                } else loadDataFiles(fileEntry, type);
             }
         }
     }  
+
+    private void loadDataFiles(File fileEntry, String type) {
+        System.out.println("Loading " + fileEntry + "...");
+        if(type == "event") loadEventFile(fileEntry);
+        if(type == "source") loadSourceFile(fileEntry);
+        System.out.println("Finished loading " + fileEntry + "!");
+    }
     
     private void loadEventFile(File file) {
         List<EventModel> eventList = new ArrayList<>();

@@ -2,7 +2,7 @@
 
  - As it was not specified:
    
-   - The results are not ordered in any way.
+   - The results are ordered by event ID.
    
    - The value of "sourceId" appears twice in all responses (is contained both in "sourceId" and in "source.id"), as it was only requested to "add the source data to the event data".
    

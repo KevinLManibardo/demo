@@ -1,6 +1,6 @@
 package com.ariadna.infrastructure.models;
 
-public class EventWithSourceModel {
+public class EventWithSourceModel implements Comparable<EventWithSourceModel> {
     private long id;
     private long sourceId;
     private SourceModel source;
@@ -38,5 +38,10 @@ public class EventWithSourceModel {
     @Override
     public String toString() {
         return "{EventWithSourceModel: " + sourceId + " " + source + "}";
+    }
+
+    @Override
+    public int compareTo(EventWithSourceModel o) {
+        return (int)(this.getId() - o.getId());
     }
 }

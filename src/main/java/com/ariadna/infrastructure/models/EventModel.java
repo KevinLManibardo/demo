@@ -17,32 +17,15 @@ public class EventModel {
         return id;
     }
 
-    public void setId(long id) {
-        this.id = id;
-    }
-
     public long getSourceId() {
         return source_id;
     }
-
-    public void setSourceId(long source_id) {
-        this.source_id = source_id;
-    }
-
 
     public long getTimestamp() {
         return timestamp;
     }
 
-    public void setTimestamp(long timestamp) {
-        this.timestamp = timestamp;
-    }
-
     public long getValue(){
         return value;
-    }
-
-    public void setValue(long value){
-        this.value = value;
     }
 }
