@@ -23,10 +23,11 @@ public class EventsController {
         this.eventsService = eventsService;
     }
 
-    @RequestMapping(value = "/events/source/{source_id}", method = RequestMethod.GET)
-    public List<EventWithSourceResponse> getEventsBySource(@PathVariable long source_id) {        
-        List<EventWithSource> events = eventsService.getEventsBySource(source_id);        
-        return events.stream().map(event -> mapToEventWithSourceResponse(event)).toList();
+    @RequestMapping(value = "/events/source/{sourceId}", method = RequestMethod.GET)
+    public List<EventWithSourceResponse> getEventsBySource(@PathVariable long sourceId) {        
+        List<EventWithSource> events = eventsService.getEventsBySource(sourceId);
+        List<EventWithSourceResponse> answer = events.stream().map(event -> mapToEventWithSourceResponse(event)).toList();
+        return answer;
     }
 
     @RequestMapping(value = "/events/start/{startDate}/end/{endDate}", method = RequestMethod.GET) 

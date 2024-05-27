@@ -1,1 +1,1 @@
-java -jar target\prueba-ariadna-1.0.0.jar
+java -jar prueba-ariadna-1.0.0.jar

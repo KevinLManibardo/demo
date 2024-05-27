@@ -22,8 +22,8 @@ public class EventsServiceImpl implements EventsService {
     }
 
     @Override
-    public List<EventWithSource> getEventsBySource(long source_id) {
-        List<EventWithSourceModel> eventModels = eventsRepository.getEventsWithSourceBySourceId(source_id);
+    public List<EventWithSource> getEventsBySource(long sourceId) {
+        List<EventWithSourceModel> eventModels = eventsRepository.getEventsWithSourceBySourceId(sourceId);
         List<EventWithSource> events = new ArrayList<EventWithSource>();
         for(EventWithSourceModel eventModel : eventModels) {
             events.add(mapModelToEventWithSource(eventModel));

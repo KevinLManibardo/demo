@@ -13,8 +13,8 @@ public interface EventsRepository {
     List<EventWithSourceModel> getEventsWithSourceByTimeStamps(long startDate, long endDate);
     List<EventModel> getEventsByValues(long minValue, long maxValue);
     List<EventWithSourceModel> getEventsWithSourceByValues(long minValue, long maxValue);
-    List<EventModel> getEventsBySourceId(long source_id);
-    List<EventWithSourceModel> getEventsWithSourceBySourceId(long source_id);
+    List<EventModel> getEventsBySourceId(long sourceId);
+    List<EventWithSourceModel> getEventsWithSourceBySourceId(long sourceId);
     Optional<SourceModel> getSourceById(long id);
     List<SourceModel> getSources(); 
     void saveEvents(List<EventModel> events);
